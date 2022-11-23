@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-int height = 0;
 class Node{
 	public:
 	int data;
@@ -174,10 +173,7 @@ class BST{
 				}
 				visit(f);
 				q.dequeue();
-				if(p->left!=NULL || p->right!=NULL)
-				{
-					height++;
-				}
+				
 				if(p->left!=NULL){
 					q.enqueue(p->left->data); 
 				} 
@@ -228,6 +224,25 @@ class BST{
 				n = n->left;
 			}
 			return n;
+		}
+		int depth(Node *node){
+			if(node==NULL){
+				return 0;
+			}
+			else{
+				int leftD= depth(node->left);
+				int rightD= depth(node->right);
+			}
+			if(leftD>rightD){
+				return (leftD+1);
+			}
+			else{
+				return (rightD+1);
+			}
+		}
+		void height(){
+			cout<<"The height of the tree is:"<<endl;
+			int h = depth(root);
 		}
 		void delete_merging(Node *node, Node *prev=NULL)
 		{
@@ -483,9 +498,7 @@ int main()
 				bst.searching(item,y);
 				break;
 			case 5:
-				cout<<"The tree is:"<<endl;
-				bst.breath_first() ;
-				cout<<"\nHeight of the tree is: "<<height<<endl;
+				bst.height() ;
 				break;
 			default:
 				cout<<"Wrong choice"<<endl;
