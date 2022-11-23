@@ -159,6 +159,7 @@ int main()
 	int a;
 	char item;
 	SinglyLinkedList s;
+	SinglyLinkedList s2;
 	cout<<"Enter the elements of list and terminate by #"<<endl;
 	while(item!='#'){
 		cout<<"Enter the data of node"<<endl;
@@ -204,7 +205,7 @@ int main()
 				s.traverse();
 				break;
 			case 6:
-				SinglyLinkedList s2;
+				
 				cout<<"Enter the no. of elements in second singly linkedlist"<<endl;
 				cin>>a;
 				for(int i=0; i<a; i++)
@@ -217,6 +218,10 @@ int main()
 				s.concatenate(s2);
 				
 				break;
+			default:
+				cout<<"Wrong choice choose again"<<endl;
+				break;
+		}
 		
 		cout<<"\nDo you want to choose again(y/n)?"<<endl;
 		cin>>ch;
